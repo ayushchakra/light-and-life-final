@@ -58,7 +58,7 @@ def main():
             lns2 = ax2.plot(
                 (light_data[idx - 1 : idx + 5, 0] - light_data[idx - 1, [0]]) / 1000,
                 light_data[idx - 1 : idx + 5, 2],
-                "r",
+                "#A2142F",
                 label="IR LED Data",
             )
             lns = lns1 + lns2
@@ -66,16 +66,16 @@ def main():
             ax1.legend(lns, labs)
             ax1.spines["left"].set_color("green")
             ax2.spines["left"].set_color("green")
-            ax1.spines["right"].set_color("red")
-            ax2.spines["right"].set_color("red")
+            ax1.spines["right"].set_color("#A2142F")
+            ax2.spines["right"].set_color("#A2142F")
             ax1.tick_params(axis="y", colors="green")
-            ax2.tick_params(axis="y", colors="red")
+            ax2.tick_params(axis="y", colors="#A2142F")
             ax1.yaxis.label.set_color("green")
-            ax2.yaxis.label.set_color("red")
+            ax2.yaxis.label.set_color("#A2142F")
             ax1.set_ylabel("ADC Reading [counts]")
             ax2.set_ylabel("ADC Reading [counts]")
             plt.savefig(Path(__file__).parent / f"imgs/trial_{curr_timestamp_setpoint_idx}_ir.png")
-            breakpoint()
+            
             curr_timestamp_setpoint_idx += 1
             if curr_timestamp_setpoint_idx == len(timestamp_setpoints):
                 break
